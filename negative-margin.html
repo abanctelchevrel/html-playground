@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+  .page {
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 300px;
+    border: 1px solid lightgrey;
+    overflow: auto;
+  }
+  .view {
+    margin-top: 20px;
+  }
+  .viewport {
+    background-color: lightblue;
+    float: left;
+    color: grey;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+  }
+  #page {
+    margin: 50px;
+  }
+  #demo2 .view {
+    overflow: hidden;
+  }
+  #demo2 .viewport {
+    margin-bottom: -40px;
+  }
+  #demo3 .viewport {
+    height: 260px;
+  }
+  body {
+    margin: 50px;
+  }
+  </style>
+  <title>Test negative-margin</title>
+</head>
+
+<body>
+  <div id="description">
+    <p>Le but de cette démo est de comprendre le fonctionnement de negative margin dans un but de layout full-height.</p>
+    <p>Dans les trois exemples on assigne la hauteur du
+      <span style="background-color: lightblue">viewport</span>égale à la hauteur de la page. Sauf que :</p>
+    <ul>
+      <li>dans le deuxième exemple on ajoute
+        <pre>
+        .view { overflow: hidden; } 
+        .viewport { margin-bottom: -40px; }
+        </pre>
+      </li>
+      <li>dans le troisième exemple on change la hauteur
+        <pre>
+        .viewport { height: 260px; }
+        </pre>
+      </li>
+    </ul>
+    <p>Même si 2 et 3 donnent le même résultat, le 2 peut être considéré comme meilleurs car le 3 suppose que le javascript connaisse la hauteur des menu header et footer et les retranche à la hauteur de page pour obtenir le résultat désiré.</p>
+  </div>
+  <div id="demo">
+    <div class="page" id="demo1">
+      <div class="view">
+        <div class="viewport">Sans negative margin</div>
+      </div>
+    </div>
+    <div class="page" id="demo2">
+      <div class="view">
+        <div id="negative-viewport" class="viewport">Avec negative margin</div>
+      </div>
+    </div>
+    <div class="page" id="demo3">
+      <div class="view">
+        <div id="demo3 .viewport" class="viewport">Smart height</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
