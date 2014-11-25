@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <style>
+  body
+  {
+    margin: 0;
+  }
+    #top-menu
+    {
+      position: fixed;
+      height: 50px;
+      width: 100%;
+      background-color: lightgrey;
+      top: 0;
+      left: 0;
+    }
+
+    #view
+    {
+      margin-top: 50px;
+      overflow: hidden;
+      /*height: 100%;*/
+      
+    }
+
+    #viewport
+    {
+      height: 650px;
+      margin-bottom: -100px;
+      background-color: lightblue;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Test palladio layout</title>
+</head>
+<body>
+  <div id="top-menu">
+    Top menu
+  </div>
+  <div id="view">
+    <div id="viewport">Viewport</div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $('#viewport').height($(window).height());
+    });
+  </script>
+</body>
+</html>
